@@ -27,9 +27,7 @@ fun calcSimple(navController: NavController) {
     var firstNumber by remember { mutableStateOf("") }
     var secondNumber by remember { mutableStateOf("") }
     var result by remember { mutableStateOf(0.0) }
-    Scaffold(
-     
-    )
+
     Column(
         modifier = Modifier
             .fillMaxSize()

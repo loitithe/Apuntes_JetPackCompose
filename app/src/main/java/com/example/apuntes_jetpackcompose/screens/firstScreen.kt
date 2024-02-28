@@ -1,11 +1,15 @@
 package com.example.apuntes_jetpackcompose.screens
 
+import android.annotation.SuppressLint
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
@@ -26,24 +30,34 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.apuntes_jetpackcompose.navigation.AppScreens
 
+@RequiresApi(Build.VERSION_CODES.O)
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun firstScreen(navController: NavController) {
-    firstBodyContent(navController)
+
+    Scaffold(topBar = { ExampleTopAppBar() },
+        bottomBar = { MainBottomBar()},
+        //floatingActionButton = { CustomFAB() },
+        content = {
+            firstBodyContent(navController)
+        }
+    )
 
 }
 
 
-
 @Composable
 fun firstBodyContent(navController: NavController) {
+
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
             .background(Color.DarkGray),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(onClick = {
-            navController.navigate(route = AppScreens.secondScreen.route )
+            navController.navigate(route = AppScreens.secondScreen.route)
         }) {
             Text("Contador")
         }

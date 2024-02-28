@@ -164,18 +164,16 @@ fun ejercicioColumn3() {
             text = "Texto hardcodeado"
         )
     }
-
-
 }
 
 @Composable
-fun btn_back(navController:NavController){
+fun btn_back(navController: NavController) {
 
-        Button(onClick = {
-            navController.popBackStack()
-        }) {
-            Text("Volver atrás")
-        }
+    Button(onClick = {
+        navController.popBackStack()
+    }) {
+        Text("Volver atrás")
+    }
 
 
 }
