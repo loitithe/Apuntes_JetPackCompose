@@ -1,5 +1,7 @@
 package com.example.apuntes_jetpackcompose.navigation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
@@ -15,6 +17,7 @@ import com.example.apuntes_jetpackcompose.screens.secondScreen
 import com.example.apuntes_jetpackcompose.screens.CounterScreen
 import com.example.apuntes_jetpackcompose.viewmodel.MainViewModel
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Preview(showSystemUi = true)
 @Composable
 fun AppNavigation() {

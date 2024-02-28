@@ -24,9 +24,29 @@ fun CounterScreen(mainViewModel: MainViewModel ) {
             .background(Color.LightGray),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center
     ){
-        Text(text = "Contador: ${mainViewModel.counterState.value}")
+        Text(text = "Contador: ${mainViewModel.cuenta.value}")
         Button(
             onClick = { mainViewModel.increment() },
+
+            /**
+             *  .combinedClickable(
+             *                 onClick = {
+             *                     Toast
+             *                         .makeText(context, "Click simple", Toast.LENGTH_SHORT)
+             *                         .show()
+             *                 },
+             *                 onLongClick = {
+             *                     Toast
+             *                         .makeText(context, "Long Click", Toast.LENGTH_SHORT)
+             *                         .show()
+             *                 },
+             *                 onDoubleClick = {
+             *                     Toast
+             *                         .makeText(context, "Doble Click", Toast.LENGTH_SHORT)
+             *                         .show()
+             *                 },
+             *             )
+             */
             colors = ButtonDefaults.elevatedButtonColors(
                 containerColor = Color.Red,
                 contentColor = Color.White

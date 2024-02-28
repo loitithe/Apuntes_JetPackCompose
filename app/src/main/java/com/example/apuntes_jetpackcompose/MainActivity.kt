@@ -1,8 +1,10 @@
 package com.example.apuntes_jetpackcompose
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -34,6 +36,7 @@ import androidx.navigation.NavController
 import com.example.apuntes_jetpackcompose.navigation.AppNavigation
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -164,18 +167,16 @@ fun ejercicioColumn3() {
             text = "Texto hardcodeado"
         )
     }
-
-
 }
 
 @Composable
-fun btn_back(navController:NavController){
+fun btn_back(navController: NavController) {
 
-        Button(onClick = {
-            navController.popBackStack()
-        }) {
-            Text("Volver atrás")
-        }
+    Button(onClick = {
+        navController.popBackStack()
+    }) {
+        Text("Volver atrás")
+    }
 
 
 }
